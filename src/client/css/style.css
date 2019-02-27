@@ -1,0 +1,133 @@
+body {
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #555;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+.create-poll-form {
+    width: 20%;
+    margin: 0 auto;
+    padding: 2%;
+    border: solid 1px #f2f2f2;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.create-poll-form input {
+    color: #5d5d5d;
+    width: 60%;
+    padding: 8px;
+    outline: none;
+}
+
+.create-poll-form span {
+    font-size: 0.8em;
+    text-align: center;
+    display: none;
+    color: red;
+    padding-top: 5px;
+}
+
+.poll-question {
+    padding: 3%;
+}
+
+.poll-answer {
+    padding: 3%;
+}
+
+.poll-actions {
+    margin-top: 1%;
+    text-align: left;
+    width: 100%;
+}
+
+.poll-actions button {
+    display: inline-block;
+    width: 45%;
+    background-color: white;
+    cursor: pointer;
+    border: solid 1px #f2f2f2;
+    outline: none;
+    padding: 8px;
+    text-align: center;
+}
+
+.poll-form {
+    width: 35%;
+    margin: 0 auto;
+    padding: 2%;
+    border: solid 1px #f2f2f2;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.poll-form h1 {
+    text-align: center;
+}
+
+.user-name  input {
+    color: #5d5d5d;
+    width: 30%;
+    padding: 8px;
+    outline: none;
+}
+
+.user-name span {
+    font-size: 0.8em;
+    text-align: center;
+    display: none;
+    color: red;
+    padding-top: 5px;
+}
+
+.polling-questions {
+    width: 100%;
+    float: left;
+}
+
+.polling-questions p{
+    text-align: left;
+}
+
+.polling-questions input{
+    padding-left: 35px;
+    float: left;
+}
+
+.polling-questions span{
+    padding: 35px;
+}
+
+.poll-result {
+    margin-top: 6%;
+}
+
+.poll-form button {
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    border: solid 1px #f2f2f2;
+    outline: none;
+    padding: 8px;
+    text-align: center;
+}
+
+.poll-result table{
+    width: 100%;
+}
+
+.poll-result table tr th{
+   text-align: center;
+}
+
+.poll-result table tr td{
+    text-align: center;
+}

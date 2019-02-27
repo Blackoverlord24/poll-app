@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new poll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="create-poll-form">
+        <form action="#" method="post">
+            <div class="poll-question">
+                <b>Question:</b>
+                <input type="text" placeholder="Please input your poll" id="create-poll-question">
+                <span>Field is required</span>
+            </div>
+            <div class="poll-answers">
+                <div class="poll-answer">
+                    <b>Answer 1:</b>
+                    <input type="text" placeholder="Answer on poll 1" id="create_answer_1">
+                    <span>Field is required</span>
+                </div>
+                <div class="poll-answer">
+                    <b>Answer 2:</b>
+                    <input type="text" placeholder="Answer on poll 2" id="create_answer_2">
+                    <span>Field is required</span>
+                </div>
+            </div>
+            <div class="poll-actions">
+                <button type="button" id="add-new-answer">Add answer</button>
+                <button type="button" id="store-poll">Start</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/poll.js"></script>
+<script src="../js/create.js"></script>
+</body>
+</html>
