@@ -2,7 +2,8 @@ const poll = new Poll()
 //get poll uid from url
 const pollUid = window.location.href.match(/(\/\b)(?!.*\1)(.+)/)[2]
 
-if(localStorage.getItem('is_already_voted') === '1') {
+//check in local storage is already voted
+if(localStorage.getItem(pollUid)) {
   document.querySelector('.poll-form-main').innerHTML = '<h1>You have already voted</h1>'
 }else{
   drawPollForm()
@@ -28,7 +29,7 @@ async function saveVote() {
   const response = await poll.storeVote()
 
   if (!response.error) {
-    localStorage.setItem('is_already_voted', '1');
+    localStorage.setItem(pollUid, '1');
     pollForm.innerHTML = '<h1>Thank you, your voice is saved</h1>'
     drawTableResults()
   }
