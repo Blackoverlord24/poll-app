@@ -9,11 +9,11 @@
 - Set your mongodb database (src/config/db).
 - run npm start
 
-- By default application exist on localhost:5000 but you can see app path in console 
+- By default the application is available on localhost:5000 but you can see app path in console 
 
 ## Performance
 
-- Work test in next browsers:
+- The efficiency has been tested in the following browsers:
 - Chrome >= 70.0
 - Firefox >= 54.0
 - Opera >= 58.0
