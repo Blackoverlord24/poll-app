@@ -1,39 +1,18 @@
 const Poll = require('../models/Poll')
 const PollAnswer = require('../models/PollAnswer')
-const PollVote = require('../models/PollVote')
 const helpers = require('../helpers/helpers')
-const path = require('path');
+const path = require('path')
 
+//get poll page
 async function index (request, response) {
     response.sendFile(path.join(__dirname+'/../client/pages/index.html'));
 }
 
+//get create poll page
 async function create (request, response) {
     response.sendFile(path.join(__dirname+'/../client/pages/create.html'));
 }
-
-async function storeVote (request, response) {
-    try {
-
-        const validation = helpers.newVoteValidation(request.body.user_name, request.body.answer_id)
-
-        if(validation.error) {
-            response.status(422).send(validation.message)
-            return
-        }
-
-        await new PollVote({
-            answer_id: request.body.answer_id,
-            user_name: request.body.user_name,
-        }).save()
-
-        response.status(200).json({error: false})
-    } catch (e) {
-        console.log(e)
-        response.status(422).send(e)
-    }
-}
-
+//validate and save poll in db
 async function store (request, response) {
 
     try {
@@ -61,7 +40,7 @@ async function store (request, response) {
         response.status(422).send(e)
     }
 }
-
+//get poll data
 async function show (request, response) {
     try {
         const poll = await Poll.findById(request.params.id)
@@ -75,4 +54,4 @@ async function show (request, response) {
     }
 }
 
-module.exports = {store, show, storeVote, create, index}
+module.exports = {store, show, create, index}

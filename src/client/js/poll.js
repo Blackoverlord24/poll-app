@@ -1,8 +1,9 @@
 class Poll {
   constructor() {
+    //Number of answers inputs in create form
     this.answersNumber = 2
   }
-
+  //add new answer option to poll
   addAnswer () {
     this.answersNumber++
     const answerHtmlMarkup = `<div class="poll-answer">
@@ -16,6 +17,7 @@ class Poll {
       .insertAdjacentHTML("beforeEnd", answerHtmlMarkup);
   }
 
+  //Validate client poll data and send it on server to save in db
   async storePoll () {
 
     if(!this.validatePoll()) {  return }
@@ -40,18 +42,24 @@ class Poll {
 
     return await rawResponse.json()
   }
-
+  //get poll info from server
   async getPoll (uid) {
     const rawResponse = await fetch(`../../poll/${uid}`)
 
     return await rawResponse.json()
   }
+  //get poll votes info from server
+  async getPollVotes (pollId) {
+    const rawResponse = await fetch(`../../poll-vote/${pollId}`)
 
+    return await rawResponse.json()
+  }
+  //send vote info on server for save
   async storeVote () {
     const userName = document.getElementById('user-name').value
     const answer = document.querySelector('input[name="poll-question"]:checked').value
 
-    const rowResponse = await fetch('../../poll/vote', {
+    const rowResponse = await fetch('../../poll-vote', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -63,7 +71,7 @@ class Poll {
     return await rowResponse.json()
 
   }
-
+  //validate poll data on create form
   validatePoll () {
     let validation = true
 

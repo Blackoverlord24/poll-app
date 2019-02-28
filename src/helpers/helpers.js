@@ -1,3 +1,4 @@
+//validate new poll data
 const newPollValidation = function (question, answers) {
 
     const validation = {
@@ -24,7 +25,7 @@ const newPollValidation = function (question, answers) {
 
     return validation
 }
-
+//validate poll vote data
 const newVoteValidation = function (name, answer_id) {
 
     const validation = {
